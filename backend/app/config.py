@@ -8,7 +8,7 @@ load_dotenv()
 
 
 class Settings(BaseModel):
-	model_path: str = Field(default="models/deepfake_model_v1.keras")
+	model_path: str = Field(default="models/deepfake.weights.h5")
 	debug: bool = Field(default=False)
 	api_rate_limit: str = Field(default="5/minute")
 	cors_allow_origins: list[str] = Field(default_factory=lambda: ["http://localhost:5173"])
@@ -29,7 +29,7 @@ def get_settings() -> Settings:
 	parsed_origins = [origin.strip() for origin in origins.split(",") if origin.strip()]
 
 	return Settings(
-		model_path=os.getenv("MODEL_PATH", "models/deepfake_model_v1.keras"),
+		model_path=os.getenv("MODEL_PATH", "models/deepfake_v1.weights.h5"),
 		debug=os.getenv("DEBUG", "false").lower() == "true",
 		api_rate_limit=os.getenv("API_RATE_LIMIT", "5/minute"),
 		cors_allow_origins=parsed_origins,
