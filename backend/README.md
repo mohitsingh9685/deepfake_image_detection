@@ -1,3 +1,12 @@
+---
+title: Deepfake Image Detection
+emoji: 🧠
+colorFrom: purple
+colorTo: blue
+sdk: docker
+pinned: false
+---
+
 # Deepfake Image Detection Backend
 
 Production-ready FastAPI inference service for EfficientNet-based deepfake image detection.
