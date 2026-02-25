@@ -7,31 +7,37 @@ const team = [
     name: 'Dhruv Bansal',
     role: 'Lead Machine Learning Engineer',
     blurb: 'Leads model development, dataset preprocessing, training, validation, and performance optimization for deepfake image detection.',
+    linkedin: 'https://www.linkedin.com/in/dhruv-bansal',
   },
   {
     name: 'Mohit Singh',
     role: 'Full-Stack & System Architect',
     blurb: 'Builds secure backend APIs, integrates the ML model with frontend, manages deployment, and ensures production-ready architecture.',
+    linkedin: 'https://www.linkedin.com/in/mohitsingh9685/',
   },
   {
     name: 'Manas Dwivedi',
     role: 'Model Evaluation & Research Engineer',
     blurb: 'Handles experimentation, accuracy analysis, confusion matrix evaluation, performance benchmarking, and technical research documentation.',
+    linkedin: 'https://www.linkedin.com/in/manas-dwivedi',
   },
   {
     name: 'Shresth Rastogi',
     role: 'Documentation & Technical Report Lead',
     blurb: 'Prepares project documentation, compiles research findings, and creates the final technical PDF report.',
+    linkedin: 'https://www.linkedin.com/in/shresth-rastogi',
   },
   {
     name: 'Anurag Ranjan',
     role: 'Presentation & PPT Designer',
     blurb: 'Designs the project presentation, prepares slides with architecture diagrams, model results, and demo flow.',
+    linkedin: 'https://www.linkedin.com/in/anurag-ranjan',
   },
   {
     name: 'Ram Katara',
     role: 'Demo & Submission Coordinator',
     blurb: 'Handles demo video creation, final packaging, submission formatting, and supporting materials for evaluation.',
+    linkedin: 'https://www.linkedin.com/in/ram-katara',
   },
 ] as const;
 
@@ -79,7 +85,9 @@ export function TeamPage() {
                     AI security focus
                   </div>
                   <a
-                    href="#"
+                    href={m.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 rounded-xl bg-white/6 px-3 py-2 text-xs text-white/75 ring-1 ring-white/10 transition hover:bg-white/8 hover:text-white"
                     aria-label={`LinkedIn for ${m.name}`}
                   >
@@ -95,4 +103,3 @@ export function TeamPage() {
     </div>
   )
 }
-

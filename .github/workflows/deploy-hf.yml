@@ -1,0 +1,29 @@
+name: Deploy Backend to HuggingFace Space
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'backend/**'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Push backend to Hugging Face
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          cd backend
+          git init
+          git config --global user.email "mohitsinghrajput801103@gmail.com"
+          git config --global user.name "github-actions"
+          git remote add hf https://USER:${HF_TOKEN}@huggingface.co/spaces/mohitsingh9685/deepfake-image-detection
+          git add .
+          git commit -m "Deploy from GitHub Actions" || echo "No changes to commit"
+          git push hf main --force

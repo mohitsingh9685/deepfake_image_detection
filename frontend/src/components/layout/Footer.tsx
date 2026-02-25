@@ -27,7 +27,7 @@ export function Footer() {
               Try the demo
             </Link>
             <a
-              href="https://github.com"
+              href="https://github.com/mohitsingh9685/deepfake_image_detection"
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-xl bg-white/6 px-4 py-2 text-sm text-white/80 ring-1 ring-white/10 transition hover:bg-white/8 hover:text-white"

@@ -20,10 +20,4 @@ COPY . .
 
 EXPOSE 7860
 
-CMD ["uv", "run", "gunicorn", "app.main:app", 
-     "-k", "uvicorn.workers.UvicornWorker",
-     "-w", "1",
-     "-b", "0.0.0.0:7860",
-     "--timeout", "300",
-     "--access-logfile", "-",
-     "--error-logfile", "-"]
+CMD ["uv", "run", "gunicorn", "app.main:app", "-k", "uvicorn.workers.UvicornWorker", "-w", "1", "-b", "0.0.0.0:7860", "--timeout", "300", "--access-logfile", "-", "--error-logfile", "-"]
