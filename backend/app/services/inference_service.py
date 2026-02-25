@@ -24,7 +24,7 @@ class InferenceService:
             raise ModelInferenceError() from exc
 
         fake_score = max(0.0, min(1.0, fake_score))
-        predicted_label = "Fake" if fake_score >= 0.5 else "Real"
+        predicted_label = "Real" if fake_score >= 0.5 else "Fake"
         confidence = fake_score if predicted_label == "Fake" else (1.0 - fake_score)
 
         return PredictionResponse(
