@@ -4,21 +4,36 @@ import { SectionHeading } from '../components/ui/SectionHeading'
 
 const team = [
   {
-    name: 'Ava Chen',
-    role: 'ML Engineer',
-    blurb: 'Builds robust training pipelines and model evaluation for deepfake classification.',
+    name: 'Dhruv Bansal',
+    role: 'Lead Machine Learning Engineer',
+    blurb: 'Leads model development, dataset preprocessing, training, validation, and performance optimization for deepfake image detection.',
   },
   {
-    name: 'Noah Patel',
-    role: 'Full‑Stack Engineer',
-    blurb: 'Ships premium UX with a secure API integration and production-minded architecture.',
+    name: 'Mohit Singh',
+    role: 'Full-Stack & System Architect',
+    blurb: 'Builds secure backend APIs, integrates the ML model with frontend, manages deployment, and ensures production-ready architecture.',
   },
   {
-    name: 'Mia Rodriguez',
-    role: 'Product & Security',
-    blurb: 'Designs trustworthy workflows and interpretable confidence reporting for real teams.',
+    name: 'Manas Dwivedi',
+    role: 'Model Evaluation & Research Engineer',
+    blurb: 'Handles experimentation, accuracy analysis, confusion matrix evaluation, performance benchmarking, and technical research documentation.',
   },
-] as const
+  {
+    name: 'Shresth Rastogi',
+    role: 'Documentation & Technical Report Lead',
+    blurb: 'Prepares project documentation, compiles research findings, and creates the final technical PDF report.',
+  },
+  {
+    name: 'Anurag Ranjan',
+    role: 'Presentation & PPT Designer',
+    blurb: 'Designs the project presentation, prepares slides with architecture diagrams, model results, and demo flow.',
+  },
+  {
+    name: 'Ram Katara',
+    role: 'Demo & Submission Coordinator',
+    blurb: 'Handles demo video creation, final packaging, submission formatting, and supporting materials for evaluation.',
+  },
+] as const;
 
 function initials(name: string) {
   return name
