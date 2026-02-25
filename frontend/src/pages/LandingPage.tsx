@@ -11,10 +11,11 @@ import {
   Zap,
 } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import { Card, CardContent, CardHeader } from '../components/ui/Card'
+import { Card, CardContent } from '../components/ui/Card'
 import { SectionHeading } from '../components/ui/SectionHeading'
 import { Button } from '../components/ui/Button'
 import { Badge } from '../components/ui/Badge'
+import { DeepfakeModel } from '../components/visuals/DeepfakeModel'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 14 },
@@ -86,96 +87,8 @@ export function LandingPage() {
             className="relative"
           >
             <div className="absolute -inset-6 -z-10 rounded-[28px] bg-gradient-to-r from-indigo-500/18 via-fuchsia-500/10 to-sky-500/18 blur-2xl" />
-            <Card glow className="overflow-hidden">
-              <CardHeader className="pb-4">
-                <div className="flex items-center justify-between">
-                  <div className="text-left">
-                    <div className="text-sm font-semibold text-white">Verification Console</div>
-                    <div className="mt-1 text-xs text-white/55">
-                      Signal + confidence in a single view
-                    </div>
-                  </div>
-                  <div className="inline-flex items-center gap-2 rounded-xl bg-white/6 px-3 py-2 text-xs text-white/70 ring-1 ring-white/10">
-                    <Lock className="h-3.5 w-3.5" />
-                    Encrypted transport
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent className="pt-0">
-                <div className="grid gap-4 sm:grid-cols-2">
-                  <div className="rounded-2xl bg-white/[0.04] p-4 ring-1 ring-white/10">
-                    <div className="flex items-center gap-2 text-sm font-medium text-white">
-                      <ScanSearch className="h-4 w-4 text-sky-200/90" />
-                      Deepfake Risk
-                    </div>
-                    <div className="mt-3 text-3xl font-semibold text-white">Low</div>
-                    <div className="mt-3 h-2 rounded-full bg-white/8">
-                      <div className="h-2 w-[78%] rounded-full bg-gradient-to-r from-emerald-400/70 via-sky-400/70 to-indigo-400/70" />
-                    </div>
-                    <div className="mt-2 text-xs text-white/55">Confidence 92%</div>
-                  </div>
+            <DeepfakeModel />
 
-                  <div className="rounded-2xl bg-white/[0.04] p-4 ring-1 ring-white/10">
-                    <div className="flex items-center gap-2 text-sm font-medium text-white">
-                      <ChartNoAxesCombined className="h-4 w-4 text-indigo-200/90" />
-                      Model Signals
-                    </div>
-                    <div className="mt-3 space-y-2">
-                      {[
-                        { label: 'Compression artifacts', v: 0.18 },
-                        { label: 'Texture inconsistencies', v: 0.12 },
-                        { label: 'Edge anomalies', v: 0.09 },
-                      ].map((s) => (
-                        <div key={s.label}>
-                          <div className="flex items-center justify-between text-xs text-white/60">
-                            <span>{s.label}</span>
-                            <span>{Math.round(s.v * 100)}%</span>
-                          </div>
-                          <div className="mt-1 h-1.5 rounded-full bg-white/8">
-                            <div
-                              className="h-1.5 rounded-full bg-gradient-to-r from-fuchsia-400/55 via-indigo-400/55 to-sky-400/55"
-                              style={{ width: `${Math.max(6, Math.round(s.v * 100))}%` }}
-                            />
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-4 rounded-2xl bg-white/[0.04] p-4 ring-1 ring-white/10">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2 text-sm font-medium text-white">
-                      <BrainCircuit className="h-4 w-4 text-fuchsia-200/90" />
-                      Inference Trace
-                    </div>
-                    <div className="text-xs text-white/50">EfficientNet pipeline</div>
-                  </div>
-                  <div className="mt-3 grid gap-2 sm:grid-cols-3">
-                    {[
-                      { label: 'Upload', color: 'from-sky-400/55 to-sky-200/40' },
-                      { label: 'AI Processing', color: 'from-indigo-400/55 to-fuchsia-300/40' },
-                      { label: 'Confidence', color: 'from-fuchsia-400/55 to-rose-300/40' },
-                    ].map((step) => (
-                      <div
-                        key={step.label}
-                        className="relative overflow-hidden rounded-2xl bg-white/[0.04] p-3 ring-1 ring-white/10"
-                      >
-                        <div
-                          className={`absolute inset-0 bg-gradient-to-r ${step.color} opacity-30`}
-                        />
-                        <div className="relative text-xs font-medium text-white/85">
-                          {step.label}
-                        </div>
-                        <div className="relative mt-2 h-1.5 rounded-full bg-white/10">
-                          <div className="h-1.5 w-3/4 rounded-full bg-white/30" />
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
           </motion.div>
         </div>
       </section>
