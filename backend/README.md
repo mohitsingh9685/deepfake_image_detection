@@ -23,6 +23,7 @@ Set in `.env`:
 - `CORS_ALLOW_ORIGINS` (comma-separated, default: `http://localhost:5173`)
 - `MAX_FILE_SIZE_BYTES` (default: `5242880`)
 - `MODEL_VERSION` (default: `v1`)
+- `HUGGINGFACE_MODEL_URL` (default: `https://huggingface.co/dhruvbansalup/deepfake-image-detector/resolve/main/deepfake_v1.weights.h5`)
 
 ## Local Run
 

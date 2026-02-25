@@ -29,6 +29,7 @@ def get_settings() -> Settings:
 	parsed_origins = [origin.strip() for origin in origins.split(",") if origin.strip()]
 
 	return Settings(
+		huggingface_model_url=os.getenv("HUGGINGFACE_MODEL_URL", "https://huggingface.co/dhruvbansalup/deepfake-image-detector/resolve/main/deepfake_v1.weights.h5"),
 		model_path=os.getenv("MODEL_PATH", "model_weights/deepfake_v1.weights.h5"),
 		debug=os.getenv("DEBUG", "false").lower() == "true",
 		api_rate_limit=os.getenv("API_RATE_LIMIT", "5/minute"),
