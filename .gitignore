@@ -28,7 +28,6 @@ env/
 *.swp
 *.swo
 .DS_Store
-models/
 *.h5
 *.pkl
 *.pth

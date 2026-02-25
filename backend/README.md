@@ -17,7 +17,7 @@ Production-ready FastAPI inference service for EfficientNet-based deepfake image
 
 Set in `.env`:
 
-- `MODEL_PATH` (default: `models/deepfake_model_v1.keras`)
+- `MODEL_PATH` (default: `model_weights/deepfake_model_v1.keras`)
 - `DEBUG` (default: `false`)
 - `API_RATE_LIMIT` (default: `5/minute`)
 - `CORS_ALLOW_ORIGINS` (comma-separated, default: `http://localhost:5173`)
