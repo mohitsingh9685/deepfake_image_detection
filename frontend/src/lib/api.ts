@@ -5,22 +5,38 @@ export type PredictResponse = {
 }
 
 export function getApiBaseUrl() {
-  return (import.meta.env.VITE_API_BASE_URL as string | undefined) ?? 'http://localhost:8000'
+  return ((import.meta.env.VITE_API_BASE_URL as string | undefined) ?? 'http://localhost:8000').replace(
+    /\/$/,
+    '',
+  )
 }
 
 export async function predictImage(file: File, signal?: AbortSignal): Promise<PredictResponse> {
   const form = new FormData()
   form.append('file', file)
 
-  const res = await fetch(`${getApiBaseUrl().replace(/\/$/, '')}/predict`, {
-    method: 'POST',
-    body: form,
-    signal,
-  })
+  const endpoint = `${getApiBaseUrl()}/predict`
+
+  let res: Response
+  try {
+    res = await fetch(endpoint, {
+      method: 'POST',
+      body: form,
+      signal,
+    })
+  } catch (error) {
+    if (error instanceof Error && error.name === 'AbortError') {
+      throw error
+    }
+    throw new Error(
+      `Network error while calling ${endpoint}. Check CORS origins, backend availability, and HTTPS/HTTP mismatch.`,
+    )
+  }
 
   if (!res.ok) {
-    const text = await res.text().catch(() => '')
-    throw new Error(text || `Request failed: ${res.status}`)
+    const text = (await res.text().catch(() => '')).replace(/\s+/g, ' ').trim()
+    const details = text ? `: ${text.slice(0, 160)}` : ''
+    throw new Error(`Request failed (${res.status}) at ${endpoint}${details}`)
   }
 
   return (await res.json()) as PredictResponse

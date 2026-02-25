@@ -28,10 +28,11 @@ async def lifespan(app: FastAPI):
     logger.info("Starting deepfake backend", model_path=settings.model_path)
     
     #Download model weights if not present
-    download_model_weights(
-        settings.huggingface_model_url,
-        settings.model_path
-    )
+    if settings.huggingface_model_url:
+        download_model_weights(
+            settings.huggingface_model_url,
+            settings.model_path
+        )
 
     # Load model
     app.state.settings = settings
