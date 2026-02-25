@@ -8,6 +8,7 @@ load_dotenv()
 
 
 class Settings(BaseModel):
+	huggingface_model_url: str | None = Field(default="https://huggingface.co/dhruvbansalup/deepfake-image-detector/resolve/main/deepfake_v1.weights.h5")
 	model_path: str = Field(default="model_weights/deepfake.weights.h5")
 	debug: bool = Field(default=False)
 	api_rate_limit: str = Field(default="5/minute")

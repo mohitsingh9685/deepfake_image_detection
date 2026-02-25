@@ -8,6 +8,7 @@ def download_model_weights(model_url: str, model_path: str):
     if not os.path.exists(model_path):
         print("Downloading model from HuggingFace...")
         response = requests.get(model_url)
+        os.makedirs(os.path.dirname(model_path), exist_ok=True)
         with open(model_path, "wb") as f:
             f.write(response.content)
         print("Download complete.")
