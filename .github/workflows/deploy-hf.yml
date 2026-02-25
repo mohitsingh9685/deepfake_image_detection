@@ -26,4 +26,4 @@ jobs:
           git remote add hf https://USER:${HF_TOKEN}@huggingface.co/spaces/mohitsingh9685/deepfake-image-detection
           git add .
           git commit -m "Deploy from GitHub Actions" || echo "No changes to commit"
-          git push hf main --force
+          git push hf master --force
