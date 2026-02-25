@@ -4,8 +4,7 @@ on:
   push:
     branches:
       - main
-    paths:
-      - 'backend/**'
+  workflow_dispatch:
 
 jobs:
   deploy:
@@ -20,10 +19,10 @@ jobs:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
           cd backend
-          git init
-          git config --global user.email "mohitsinghrajput801103@gmail.com"
+          git init -b main
+          git config --global user.email "github-actions@github.com"
           git config --global user.name "github-actions"
           git remote add hf https://USER:${HF_TOKEN}@huggingface.co/spaces/mohitsingh9685/deepfake-image-detection
           git add .
           git commit -m "Deploy from GitHub Actions" || echo "No changes to commit"
-          git push hf master --force
+          git push hf main --force
