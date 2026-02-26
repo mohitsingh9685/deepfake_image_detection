@@ -5,15 +5,15 @@ import { SectionHeading } from '../components/ui/SectionHeading'
 const team = [
   {
     name: 'Dhruv Bansal',
-    role: 'Lead Machine Learning Engineer',
-    blurb: 'Leads model development, dataset preprocessing, training, validation, and performance optimization for deepfake image detection.',
+    role: 'Full-Stack & System Architect',
+    blurb: 'Designed and implemented the FastAPI backend and frontend integration, integrated the trained TensorFlow/Keras model into the API and deployed the complete system to production.',
     linkedin: 'https://www.linkedin.com/in/dhruvbansalup',
     avatar: 'https://media.licdn.com/dms/image/v2/D5603AQHX8lo0PzRY1A/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1726396359432?e=1773878400&v=beta&t=Kiq2XPyBlssncU5f1NjD8abU2rlXeHO31zFv251mZiA',
   },
   {
     name: 'Mohit Singh',
-    role: 'Full-Stack & System Architect',
-    blurb: 'Builds secure backend APIs, integrates the ML model with frontend, manages deployment, and ensures production-ready architecture.',
+    role: 'Model Training & Experimentation Lead',
+    blurb: 'Led deep learning model training, experimentation, hyperparameter tuning, and performance optimization for deepfake image detection.',
     linkedin: 'https://www.linkedin.com/in/mohitsingh9685/',
     avatar: 'https://media.licdn.com/dms/image/v2/D5603AQHUlOiGf5yigg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1731178703831?e=1773878400&v=beta&t=Fba6HWhiv0TS10hsMXgRP6S_X6KKEr6A6DvTL3EPf60',
   },
@@ -25,18 +25,18 @@ const team = [
     avatar: 'https://media.licdn.com/dms/image/v2/D4E03AQG3qcwJS0wfcQ/profile-displayphoto-shrink_200_200/B4EZeuCmkEHsAY-/0/1750971608202?e=1773878400&v=beta&t=tSOWU6Z5-dKxiKouIuUqCkEOuSUdUsik55TESCIrlrc',
   },
   {
+    name: 'Anurag Ranjan',
+    role: 'Presentation & Communication Lead',
+    blurb: 'Designed the project presentation, created architecture diagrams, organized demo flow, and structured result visualization.',
+    linkedin: 'https://www.linkedin.com/in/anurag-ranjan-187357238',
+    avatar: 'https://media.licdn.com/dms/image/v2/D4D03AQEJU-GI7fGQCQ/profile-displayphoto-scale_200_200/B4DZpSmagkIkAY-/0/1762322395257?e=1773878400&v=beta&t=nHAfhMV2DtfP-3qcqQq6aF2e5AGxYyZBhh4wOOCME9U',
+  },
+  {
     name: 'Shresth Rastogi',
-    role: 'Documentation & Technical Report Lead',
+    role: 'Technical Documentation Lead',
     blurb: 'Prepares project documentation, compiles research findings, and creates the final technical PDF report.',
     linkedin: 'https://www.linkedin.com/in/shresth-rastogi-03a560329',
     avatar: 'https://media.licdn.com/dms/image/v2/D4E35AQEoFE2f0au3Cg/profile-framedphoto-shrink_200_200/B4EZiJgCjGHoAY-/0/1754653534877?e=1772658000&v=beta&t=aMG9LWweLfrC2DAjTis9JPyoCLJklv6qQAnq1gp-xcs',
-  },
-  {
-    name: 'Anurag Ranjan',
-    role: 'Presentation & PPT Designer',
-    blurb: 'Designs the project presentation, prepares slides with architecture diagrams, model results, and demo flow.',
-    linkedin: 'https://www.linkedin.com/in/anurag-ranjan-187357238',
-    avatar: 'https://media.licdn.com/dms/image/v2/D4D03AQEJU-GI7fGQCQ/profile-displayphoto-scale_200_200/B4DZpSmagkIkAY-/0/1762322395257?e=1773878400&v=beta&t=nHAfhMV2DtfP-3qcqQq6aF2e5AGxYyZBhh4wOOCME9U',
   },
   {
     name: 'Ram Katara',
